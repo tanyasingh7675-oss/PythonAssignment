@@ -1,0 +1,9 @@
+Reflection:
+This assignment helped me understand how to use Python for data analysis, cleaning, and web scraping.
+In Part A (analyze_logs.py), I learned how to read CSV files, handle invalid or missing data, and calculate totals using the pandas library. I also learned how to detect and handle invalid timestamps and negative durations.
+In Part B (scrape_summarize.py), I learned how to fetch data from websites using the requests library and extract useful information such as titles and descriptions with BeautifulSoup. It also taught me how to handle errors safely when some websites fail to load.
+The optional Part C (index.html) was interesting because it connected Python data with a simple web interface that displays the scraped results in a table using HTML and JavaScript.
+The most challenging part was debugging small errors and understanding how Python functions work together. I solved issues step-by-step by reading error messages and asking for AI guidance when needed.
+If I had more time, I would integrate an AI summarization
+model or LangChain workflow for automatic text summarization.
+Overall, this project gave me practical experience in working with real data, improving problem-solving skills, and understanding how automation can be used in real-world tasks.

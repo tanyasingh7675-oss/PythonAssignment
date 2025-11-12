@@ -1,0 +1,9 @@
+AI Assist Log:
+1. I used ChatGPT to understand the assignment and break it into step-by-step parts.
+2. ChatGPT helped me write the basic structure for analyze_logs.py and scrape_summarize.py.
+3. I asked ChatGPT to explain errors, like fixing the "_name_" issue and how to activate the virtual environment.
+4. I used ChatGPT to guide me on how to make index.html to display my scrape_summary.csv data.
+5. I edited all code manually after understanding what each part does.
+6. I used ChatGPT to help me write the reflection.txt and README.md files.
+
+All final scripts were tested and verified by me before submission.

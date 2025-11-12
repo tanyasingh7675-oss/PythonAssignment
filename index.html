@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrape Summary Viewer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f8f9fa; }
+    h2 { text-align: center; }
+    input { padding: 8px; width: 50%; margin: 10px auto; display: block; border: 1px solid #ccc; border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; background: #fff; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #e9ecef; }
+    tr:hover { background: #f1f1f1; }
+  </style>
+</head>
+<body>
+  <h2>Scrape Summary Results</h2>
+  <input type="text" id="search" placeholder="Search by title or URL..." />
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Summary</th>
+        <th>Fetch Time</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function loadCSV() {
+      const response = await fetch('scrape_summary.csv');
+      const text = await response.text();
+      const rows = text.split('\n').slice(1); // skip header
+      const tbody = document.querySelector('#data-table tbody');
+      tbody.innerHTML = '';
+      rows.forEach(row => {
+        const cols = row.split(',');
+        if (cols.length < 5) return;
+        const tr = document.createElement('tr');
+        cols.forEach(col => {
+          const td = document.createElement('td');
+          td.textContent = col;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Filter function
+    document.getElementById('search').addEventListener('input', e => {
+      const term = e.target.value.toLowerCase();
+      document.querySelectorAll('#data-table tbody tr').forEach(tr => {
+        tr.style.display = tr.textContent.toLowerCase().includes(term) ? '' : 'none';
+      });
+    });
+
+    loadCSV();
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+user,task_type,start,duration_min
+aisha,data_cleanup,2025-10-18 09:10:12,35
+raj,analysis,2025-10-18 10:00:00,45
+aisha,meeting,2025-10-19 11:30:00,-5
+maria,data_cleanup,2025-10-20 09:15:00,30
+raj,development,2025-10-20 13:00:00,60
+lina,analysis,invalid-timestamp,20
